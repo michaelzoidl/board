@@ -1,6 +1,6 @@
 {
   "name": "useboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "File-based kanban board - folders are columns, markdown files are tasks",
   "type": "module",
   "bin": {
@@ -37,15 +37,15 @@
     "file-based",
     "git-friendly"
   ],
-  "author": "Anthropic",
+  "author": "Michael Zoidl",
   "license": "MIT",
-  "homepage": "https://github.com/anthropics/useboard#readme",
+  "homepage": "https://github.com/michaelzoidl/board#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthropics/useboard.git"
+    "url": "git+https://github.com/michaelzoidl/board.git"
   },
   "bugs": {
-    "url": "https://github.com/anthropics/useboard/issues"
+    "url": "https://github.com/michaelzoidl/board/issues"
   },
   "dependencies": {
     "@fastify/static": "^7.0.4",

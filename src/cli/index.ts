@@ -13,7 +13,7 @@ export function createCli(): Command {
   program
     .name('board')
     .description('File-based kanban board - folders are columns, markdown files are tasks')
-    .version('0.1.0')
+    .version('0.1.1')
 
   // Default command is serve
   program
