@@ -45,10 +45,19 @@ export function EditModal() {
   if (!editingTask) return null
 
   return (
-    <div className="overlay" onClick={() => setEditingTask(null)}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h2>Edit Task</h2>
-        <form onSubmit={handleSubmit}>
+    <div className="panel-overlay" onClick={() => setEditingTask(null)}>
+      <div className="panel" onClick={(e) => e.stopPropagation()}>
+        <div className="panel-header">
+          <h2>Edit Task</h2>
+          <button
+            type="button"
+            className="panel-close"
+            onClick={() => setEditingTask(null)}
+          >
+            ✕
+          </button>
+        </div>
+        <form onSubmit={handleSubmit} className="panel-content">
           <label>Title</label>
           <input
             ref={inputRef}
@@ -63,7 +72,7 @@ export function EditModal() {
             onChange={setDesc}
             placeholder="Add details... Use **bold**, *italic*, `code`, and @file to mention files"
           />
-          <div className="modal-btns">
+          <div className="panel-btns">
             <button
               type="button"
               className="btn"
