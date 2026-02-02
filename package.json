@@ -1,6 +1,6 @@
 {
   "name": "useboard",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "File-based kanban board - folders are columns, markdown files are tasks",
   "type": "module",
   "bin": {

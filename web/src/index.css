@@ -390,8 +390,14 @@ main {
   line-height: 1.6;
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow: hidden;
+  overflow-y: auto;
   border: 1px solid transparent;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.editor-preview::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .editor-preview .md-bold {

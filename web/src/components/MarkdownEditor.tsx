@@ -36,8 +36,16 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
   const [selectedIdx, setSelectedIdx] = useState(0)
   const [loading, setLoading] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const previewRef = useRef<HTMLDivElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const fetchIdRef = useRef(0)
+
+  // Sync scroll between textarea and preview
+  const handleScroll = useCallback(() => {
+    if (textareaRef.current && previewRef.current) {
+      previewRef.current.scrollTop = textareaRef.current.scrollTop
+    }
+  }, [])
 
   // Fetch files when mention query changes
   useEffect(() => {
@@ -153,10 +161,12 @@ export function MarkdownEditor({ value, onChange, placeholder }: MarkdownEditorP
         value={value}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
+        onScroll={handleScroll}
         placeholder={placeholder}
         style={{ color: 'transparent', caretColor: 'var(--text)' }}
       />
       <div
+        ref={previewRef}
         className="editor-preview"
         dangerouslySetInnerHTML={{ __html: previewHtml }}
       />
